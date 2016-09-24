@@ -26,22 +26,44 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   </head>
-  <body style="font-family:Georgia;">
+
+  @font-face {
+    font-family: "BonvenoCF";
+    src: url("BonvenoCF-Light.otf");
+  }
+  .myinput {
+    font-family: "BonvenoCF";
+  }
+  <body style="font-family:BonvenoCF">
     <div>
         <br> <br> <br>
-        <h1 align="center">FLYTYME</h1>
+        <h1 align="center">FlyTyme</h1>
         <h3 align="center">Welcome to Flytyme, a website that helps you make the most of your flying experience.</h3> <br>
-        <form align="center">
-            Today's Date: (e.g. 01/01/2016)<br> <!-- Need flight schedule api -->
-            <input type="date" name="todaysdate"><br>
-            Departure Date: (e.g. 01/01/2016)<br>
-            <input type="date" name="departdate"><br>
+        <form align="center"; action="action_page.php"; method=Get>
+            <script language="javascript">
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+            if(dd<10){
+              dd='0'+dd
+            }
+            if(mm<10){
+              mm='0'+mm
+            }
+        var today = yyyy+'-'+mm+'-'+dd;
+        document.getElementById("DATE").value = today;
+        </script>
+            Departure Date: (yyyy-mm-dd)<br>
+            <input type="number" name="departdate"><br>
             Departure Airport Code: (e.g. ATL)<br>
             <input type="text" name="departcode"><br>
             Arrival Airport Code: (e.g. MSP)<br>
             <input type="text" name="arrivecode"><br>
         </form>
+
     </div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
