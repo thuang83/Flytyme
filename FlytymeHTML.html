@@ -28,19 +28,11 @@
 
   </head>
 
-  @font-face {
-    font-family: "BonvenoCF";
-    src: url("BonvenoCF-Light.otf");
-  }
-  .myinput {
-    font-family: "BonvenoCF";
-  }
-  <body style="font-family:BonvenoCF">
+  <body style="font-family:Courier">
     <div>
         <br> <br> <br>
         <h1 align="center">FlyTyme</h1>
-        <h3 align="center">Welcome to FlyTyme, a website that helps you make the most of your flying experience.</h3> <br>
-        <form align="center"; action="action_page.php"; method=Get>
+        <h5 align="center">Welcome to FlyTyme, a website that helps you make the most of your flying experience.</h5> <br>
             <script language="javascript">
             var today = new Date();
             var dd = today.getDate();
@@ -55,12 +47,20 @@
         var today = yyyy+'-'+mm+'-'+dd;
         document.getElementById("DATE").value = today;
         </script>
-            Departure Date: (yyyy-mm-dd)<br>
-            <input type="number" name="departdate"><br>
+        <form align="center"; action="Main">
+            Starting Address: <br>
+            <input type="text" name="origin"><br>
+            Departure Date: <br>
+            <input type="date" name="departdate"><br>
             Departure Airport Code: (e.g. ATL)<br>
             <input type="text" name="departcode"><br>
             Arrival Airport Code: (e.g. MSP)<br>
             <input type="text" name="arrivecode"><br>
+            Number of People: <br>
+            <input type="number" name="people"><br>
+            Number of Check-In Luggage: <br>
+            <input type="number" name="bags"><br><br>
+            <input type="submit" name="Submit">
         </form>
 
     </div>
